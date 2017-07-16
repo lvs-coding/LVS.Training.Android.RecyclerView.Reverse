@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         rvMain = findViewById(R.id.rv_main);
-        rvMain.setLayoutManager(new LinearLayoutManager(this));
+        // Reverse list order with reverseLayout true
+        rvMain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,true));
         rvMain.setAdapter(new SimpleRVAdapter());
-        rvMain.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        rvMain.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
     }
 }
